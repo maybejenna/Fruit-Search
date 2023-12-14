@@ -83,17 +83,17 @@ const fruitKeyWords = [
     'Yuzu'
 ];
 
-let search = input.onkeyup = function(){
-	let results = [];
-	let inputResult = input.value;
-		if(inputResult.length){
-			results = fruitKeyWords.filter((keyword)=>{
-				return keyword.toLowerCase().includes(inputResult.toLowerCase()); 
-			}); 
-			// console.log(results)
-		}
-		showSuggestions(results);
-}
+let search = input.onkeyup = () => {
+    let results = [];
+    let inputResult = input.value;
+    if (inputResult.length) {
+        results = fruitKeyWords.filter(keyword => 
+            keyword.toLowerCase().includes(inputResult.toLowerCase())
+        );
+        // console.log(results)
+    }
+    showSuggestions(results);
+};
 
 
 function searchHandler(e) {
@@ -104,7 +104,6 @@ function showSuggestions(results, inputVal) {
 	const content = results.map((list)=>{
         return `<li onclick="useSuggestion(event)">${list}</li>`;
     });
-
 	suggestions.innerHTML = "<ul>"+ content.join("") +"</ul>"
 }
 
