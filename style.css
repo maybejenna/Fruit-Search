@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(images/fruit-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:rgb(0, 0, 0); 
+}
+
+input {
+  flex: 1;
+  height: 50px;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+  color: black;
+}
+
+.search-container {
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: aliceblue;
+  margin: 200px auto 0px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.searchrow {
+  display: flex;
+  padding: 10px
+}
+
+button{
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin-right: 2%; 
+}
+
+.search-container input,
+.search-containers {
+  padding: 20px 20px;
+}
+.search-container input {
+  padding: 20px 20px;
+}
+
+.search-container .suggestions {
+  max-height: 380px;
+  overflow-y: scroll;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+ul.has-suggestions {
+  border-top: 1px soild slategray;
+  padding: 12px 10px; 
+}
+
+ul li {
+  list-style: none;
+  border-radius: 5px;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+ul li:hover {
+  color: whitesmoke; 
+  background-color:slategrey;
+}
