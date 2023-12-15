@@ -113,5 +113,11 @@ function useSuggestion(e) {
 	suggestions.innerHTML = ``;
 }
 
+document.addEventListener('click', function(event) {
+    if (!input.contains(event.target) && !suggestions.contains(event.target)) {
+        suggestions.innerHTML = ''; 
+    }
+});
+
 input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
