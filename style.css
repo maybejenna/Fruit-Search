@@ -6,10 +6,32 @@
 }
 
 body {
+  /* background-image: linear-gradient(to right, yellow, red ); */
+  width: 100%;
   background-image: url(images/fruit-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
   color:rgb(0, 0, 0); 
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.82);
+  padding: 0 200px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  #title, #tagLine {
+    margin: 10px 0;
+  }
 }
 
 input {
@@ -26,8 +48,8 @@ input {
   width: 50%;
   margin-left:auto;
   margin-right:auto;
-  background-color: rgba(240, 248, 255, 0.8);
-  margin: 200px auto 0px;
+  background-color: rgba(255, 255, 255, 0.82);
+  margin: 100px auto 0px;
   border-radius: 10px;
   border-style: none;
 }
@@ -37,7 +59,7 @@ input {
   padding: 10px; 
 }
 
-button{
+#searchButton{
   background: transparent;
   border: 0;
   outline: 0;
@@ -54,14 +76,13 @@ button{
 }
 
 .search-container .suggestions {
-  max-height: 380px;
   overflow-y: scroll;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 ul.has-suggestions {
-  border-top: 1px soild slategray;
+  border-top: 1px soild orangered;
   padding: 12px 10px; 
 }
 
@@ -74,5 +95,25 @@ ul li {
 
 ul li:hover {
   color: whitesmoke; 
-  background-color:slategrey;
+  background-color:orangered;
+}
+
+#fruitImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  height: 300px;
+  width: 500px;
+  overflow: hidden;
+} 
+
+#fruitImage {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 15px;
 }
