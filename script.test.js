@@ -1,9 +1,25 @@
-it('should calculate lower-bracket taxes', function () {
-    expect(calculateTaxes(10000)).toEqual(1500);
-    expect(calculateTaxes(20000)).toEqual(3000);
-  });
-  
-  it('should calculate higher-bracket taxes', function () {
-    expect(calculateTaxes(50000)).toEqual(12500);
-    expect(calculateTaxes(80000)).toEqual(20000);
-  });
+describe("fruitKeyWords array", function() {
+    it("should contains a predefined list of fruits", function() {
+        expect(fruitKeyWords).toContain('Apple');
+        expect(fruitKeyWords).toContain('Banana');
+        expect(fruitKeyWords.length).toBeGreaterThan(10);
+    });
+});
+
+describe("showSuggestions function", function() {
+    it("should populates the suggestions element with fruit names", function() {
+        let testResults = ['Apple', 'Apricot'];
+        showSuggestions(testResults);
+        expect(document.querySelector('.suggestions').innerHTML).toContain('<li onclick="useSuggestion(event)">Apple</li>');
+        expect(document.querySelector('.suggestions').innerHTML).toContain('<li onclick="useSuggestion(event)">Apricot</li>');
+    });
+});
+
+describe("useSuggestion function", function() {
+    it("should updates input and image display on suggestion click", function() {
+        let mockEvent = { target: { textContent: 'Apple' } };
+        useSuggestion(mockEvent);
+
+        expect(input.value).toBe('Apple');
+    });
+});
